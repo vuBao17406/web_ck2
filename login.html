@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - BTY Coffee</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:wght@400&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/footer.css">
+  <link rel="stylesheet" href="./css/footer.css">
+  <style>
+    body {
+      font-family: 'Lora', serif;
+      color: #333;
+      background-color: #fff;
+    }
+    .navbar {
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+    }
+    .navbar-brand, .nav-link {
+      color: #333 !important;
+      font-weight: bold;
+    }
+    .login-section {
+      padding: 100px 0 50px;
+      background-image: url('./img/book-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: scroll;
+      position: relative;
+      min-height: 100vh;
+      color: #fff;
+    }
+    .login-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.1);
+      z-index: 1;
+    }
+    .login-section > * {
+      position: relative;
+      z-index: 2;
+    }
+    .login-section h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: #fff;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .login-form {
+      max-width: 550px;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      border: 1px solid #ddd;
+    }
+    .login-form .form-label {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.5rem;
+      font-weight: normal;
+      color: #555;
+    }
+    .login-form .form-control {
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      transition: border-color 0.3s ease;
+      font-family: 'Lora', serif;
+    }
+    .login-form .form-control:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+    .login-form .btn-primary {
+      background-color: #007bff;
+      border: none;
+      padding: 12px 25px;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+      font-family: 'Lora', serif;
+    }
+    .login-form .btn-primary:hover {
+      background-color: #0056b3;
+    }
+    .nav-tabs {
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 20px;
+    }
+    .nav-tabs .nav-link {
+      color: #555;
+      font-family: 'Lora', serif;
+      font-weight: bold;
+      border: none;
+    }
+    .nav-tabs .nav-link.active {
+      background-color: rgba(0, 123, 255, 0.1);
+      color: #007bff;
+      border-bottom: 2px solid #007bff;
+    }
+    .nav-tabs .nav-link:hover {
+      color: #007bff;
+    }
+    .tab-content {
+      margin-top: 10px;
+    }
+    .tab-pane {
+      display: none;
+    }
+    .tab-pane.active {
+      display: block;
+    }
+    .forgot-password {
+      color: #007bff;
+      font-size: 0.9rem;
+      text-decoration: none;
+      font-family: 'Lora', serif;
+    }
+    .forgot-password:hover {
+      text-decoration: underline;
+    }
+    .error-message {
+      color: #dc3545;
+      font-size: 0.9rem;
+      font-family: 'Lora', serif;
+      margin-top: 5px;
+      display: none;
+    }
+    .success-message {
+      color: #28a745;
+      font-size: 1rem;
+      font-family: 'Lora', serif;
+      margin-top: 10px;
+      text-align: center;
+      display: none;
+    }
+    @media (max-width: 576px) {
+      .login-section h2 {
+        font-size: 2rem;
+      }
+      .login-form {
+        padding: 20px;
+      }
+      .login-form .form-label {
+        font-size: 1.3rem;
+      }
+      .login-form .btn-primary {
+        padding: 10px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">BTY Coffee</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="menu.html">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="book.html">Book</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Login Section -->
+  <section class="login-section">
+    <div class="container">
+      <h2 class="text-center mb-4">Welcome to BTY Coffee</h2>
+      <div class="login-form">
+        <!-- Tab Navigation -->
+        <ul class="nav nav-tabs justify-content-center" id="authTabs" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="signin-tab" data-bs-toggle="tab" href="#signin" role="tab">Sign In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="register-tab" data-bs-toggle="tab" href="#register" role="tab">Register</a>
+          </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="authTabContent">
+          <!-- Sign In Form -->
+          <div class="tab-pane fade show active" id="signin" role="tabpanel">
+            <div class="mb-3">
+              <label for="signin-username" class="form-label">Username</label>
+              <input type="text" class="form-control" id="signin-username" required>
+            </div>
+            <div class="mb-3">
+              <label for="signin-password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="signin-password" required>
+            </div>
+            <div class="mb-3 text-end">
+              <a href="#" class="forgot-password">Forget Password?</a>
+            </div>
+            <button type="button" class="btn btn-primary w-100" onclick="signIn()">Sign In</button>
+            <div id="signin-success" class="success-message">Đăng nhập thành công!</div>
+          </div>
+
+          <!-- Register Form -->
+          <div class="tab-pane fade" id="register" role="tabpanel">
+            <div class="mb-3">
+              <label for="register-username" class="form-label">Username</label>
+              <input type="text" class="form-control" id="register-username" required>
+            </div>
+            <div class="mb-3">
+              <label for="register-phone" class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" id="register-phone" required>
+              <div id="phone-error" class="error-message">Số điện thoại phải có đúng 10 chữ số.</div>
+            </div>
+            <div class="mb-3">
+              <label for="register-password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="register-password" required>
+            </div>
+            <div class="mb-3">
+              <label for="register-password-again" class="form-label">Confirm Password</label>
+              <input type="password" class="form-control" id="register-password-again" required>
+              <div id="password-error" class="error-message">Mật khẩu và xác nhận mật khẩu không khớp.</div>
+            </div>
+            <button type="button" class="btn btn-primary w-100" onclick="validateRegister()">Register</button>
+            <div id="register-success" class="success-message">Đăng ký thành công!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ <footer class="footer">
+  <div class="container">
+    <div class="row">
+      <!-- About BTY Coffee -->
+      <div class="col-md-4 col-sm-6 mb-4">
+        <h5>BTY Coffee</h5>
+        <p>Experience the finest coffee and cozy ambiance at BTY Coffee. Join us for a delightful escape with every sip.</p>
+      </div>
+      <!-- Quick Links -->
+      <div class="col-md-4 col-sm-6 mb-4">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="book.html">Book</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </div>
+      <!-- Contact Info -->
+      <div class="col-md-4 col-sm-12 mb-4">
+        <h5>Contact Us</h5>
+        <p>Address: 123 Coffee Street, Hanoi, Vietnam</p>
+        <p>Phone: +84 123 456 789</p>
+        <p>Email: contact@btycoffee.com</p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/vubao1704"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/vubaoapril17/"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 text-center">
+        <p class="mt-4">&copy; 2025 BTY Coffee. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function signIn() {
+      const success = document.getElementById('signin-success');
+      success.style.display = 'block';
+      // Ẩn thông báo sau 3 giây
+      setTimeout(() => {
+        success.style.display = 'none';
+      }, 3000);
+    }
+
+    function validateRegister() {
+      const phone = document.getElementById('register-phone').value;
+      const password = document.getElementById('register-password').value;
+      const passwordAgain = document.getElementById('register-password-again').value;
+      const phoneError = document.getElementById('phone-error');
+      const passwordError = document.getElementById('password-error');
+      const success = document.getElementById('register-success');
+      let isValid = true;
+
+      // Reset messages
+      phoneError.style.display = 'none';
+      passwordError.style.display = 'none';
+      success.style.display = 'none';
+
+      // Check phone number (exactly 10 digits)
+      if (!/^\d{10}$/.test(phone)) {
+        phoneError.style.display = 'block';
+        isValid = false;
+      }
+
+      // Check if passwords match
+      if (password !== passwordAgain) {
+        passwordError.style.display = 'block';
+        isValid = false;
+      }
+
+      // If valid, show success message
+      if (isValid) {
+        success.style.display = 'block';
+        // Ẩn thông báo sau 3 giây
+        setTimeout(() => {
+          success.style.display = 'none';
+        }, 3000);
+
+      }
+    }
+  </script>
+</body>
+</html>
